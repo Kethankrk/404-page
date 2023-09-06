@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --dur: 5s;
+}
+.hero {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("/assets/bg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+.number-div {
+    display: flex;
+    font-size: 64px;
+    align-items: center;
+    gap: 25px;
+    position: relative;
+    color: rgb(235, 234, 234);
+}
+
+.number-div > p {
+    font-weight: bold;
+    text-shadow: 10px 8px 15px rgb(20, 20, 20);
+}
+.circle {
+    width: 64px;
+    height: 64px;
+    background-color: #ffffff;
+    border-radius: 99px;
+    box-shadow: 0px 0px 5px 5px #ffffff;
+    filter: drop-shadow(0px 0px 9px #ffffff)
+        drop-shadow(0px 0px 20px #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: -2deg;
+}
+
+.circle > img {
+    width: 50%;
+    height: 50%;
+}
+
+.msg {
+    font-size: 18px;
+    color: white;
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 30px;
+    transition: scale ease 100ms;
+}
+
+.btn:hover {
+    scale: 1.1;
+}
+
+.bird-one {
+    top: 5%;
+    opacity: 0;
+    animation: fly var(--dur) 3s linear forwards infinite;
+    position: absolute;
+}
+.bird-two {
+    top: 35%;
+    left: -100px;
+    animation: fly var(--dur) linear forwards infinite;
+    position: absolute;
+}
+.bird-three {
+    top: 50%;
+    opacity: 0;
+    animation: fly-2 var(--dur) 10s linear forwards infinite;
+    position: absolute;
+    scale: -1;
+
+}
+.bird-four {
+    top: 20%;
+    opacity: 0;
+    animation: fly-2 var(--dur) 5s linear forwards infinite;
+    position: absolute;
+    scale: -1;
+}
+
+@keyframes fly {
+    0% {
+        translate: 0px 0px;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        translate: calc(100vw - 100%) 0px;
+        opacity: 0;
+    }
+}
+@keyframes fly-2 {
+    0% {
+        translate: calc(100vw - 100%) 0px;
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    100% {
+        translate: 0px 0px;
+        opacity: 0;
+    }
+}
+@media screen and (min-width: 768px) {
+    .number-div > p {
+        font-size: 160px;
+    }
+    .circle {
+        width: 120px;
+        height: 120px;
+    }
+    :root{
+        --dur: 15s;
+    }
+}
