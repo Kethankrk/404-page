@@ -13,7 +13,7 @@
     padding-top: 100px;
     align-items: center;
     min-height: 100vh;
-    background-image: url("/assets/bg.png");
+    background-image: url("./assets/bg.png");
     background-size: cover;
     background-position: center;
     overflow: hidden;
